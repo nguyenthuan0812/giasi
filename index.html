@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <title>Quản lý Giá Sản Phẩm - Demo</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { font-family: Arial, sans-serif; margin:20px; color:#222; }
+    h1,h2 { margin:8px 0; }
+    .row { margin-bottom:12px; }
+    .input-row { display:flex; gap:8px; margin-bottom:6px; }
+    .input-row input[type="text"] { flex:1; padding:8px; border-radius:6px; border:1px solid #ccc; }
+    .input-row input[type="number"] { width:150px; padding:8px; border-radius:6px; border:1px solid #ccc; }
+    #generateBtn { padding:10px 16px; border-radius:8px; border:none; cursor:pointer; background:#1177ee; color:white; }
+    #containerResult { display:flex; gap:20px; align-items:flex-start; margin-top:14px; }
+    #resultBox { width:50%; white-space:pre-line; font-size:16px; line-height:1.8; padding:12px; border-radius:8px; border:1px dashed #ddd; background:#fafafa; }
+    #resultImage { max-width:320px; border-radius:8px; border:1px solid #ddd; }
+    .controls { margin-top:8px; display:flex; gap:8px; align-items:center; }
+    #copyBtn, #exportBtn { padding:8px 12px; border-radius:6px; border:1px solid #ccc; background:#fff; cursor:pointer; }
+    .note { color:#555; font-size:13px; margin-top:8px; }
+  </style>
+</head>
+<body>
+
+  <h1>Trình kiểm tra Giá sỉ (Demo)</h1>
+
+  <div class="row">
+    <label><strong>1. Tải hình sản phẩm</strong></label><br>
+    <input type="file" id="imageInput" accept="image/*">
+    <div class="note">Lưu ý: ảnh sẽ hiển thị sau khi nhấn "Thực hiện".</div>
+  </div>
+
+  <div class="row">
+    <label><strong>2. Nhập kích cỡ & giá vốn (tối đa 7)</strong></label>
+    <div id="sizePriceInputs"></div>
+  </div>
+
+  <div class="row controls">
+    <button id="generateBtn">Thực hiện</button>
+    <button id="copyBtn">Copy kết quả</button>
+    <button id="exportBtn">Xuất file .txt</button>
+  </div>
+
+  <h2>Kết quả</h2>
+  <div id="containerResult">
+    <img id="resultImage" alt="Hình sản phẩm" />
+   <div id="resultBox">(Nhấn "Thực hiện" để xem kết quả)</div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
